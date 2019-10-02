@@ -41,6 +41,9 @@ module.exports = function zeros(expression) {
         }
         if (j%10==0){
           numOfZeros++;
+          if (j==50){
+            amountOf5++;
+          }
 
         }
       }
@@ -55,7 +58,6 @@ module.exports = function zeros(expression) {
   //console.log ("num of 2: "+amountOf2+" num of 5: "+amountOf5);
   return numOfZeros;
 }
-//console.log(zeros('1!*2!*3!*4!*5!*6!*7!*8!*9!*10!'))
+//console.log(zeros('90!!*10!!'))
 
 
-//console.log( Math.log(125, 1/5))
