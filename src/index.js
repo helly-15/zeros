@@ -1,5 +1,4 @@
-module.exports =
- function zeros(expression) {
+module.exports = function zeros(expression) {
   // your solution
   
   let factorialArray = expression.split("*");
@@ -17,10 +16,11 @@ module.exports =
       //console.log (factorialArray[i].substr(-2,1));
       for (let j=+factorialArray[i].slice(0,elementLength-1);j>0;j--){
         if (j%2==0&&j%5!=0){
-          amountOf2=amountOf2+j/2;
+
+          amountOf2=amountOf2+Math.floor(Math.log(j)/ Math.log(2));
         }
         if (j%5==0&&j%2!=0){
-          amountOf5=amountOf5+j/5;
+          amountOf5=amountOf5+Math.floor(Math.log(j)/ Math.log(5));
         }
         if (j%10==0){
           numOfZeros++;
@@ -34,10 +34,10 @@ module.exports =
       for (let j=+factorialArray[i].slice(0,elementLength-2);j>0;j=j-2){
         
         if (j%2==0&&j%5!=0){
-          amountOf2=amountOf2+j/2;
+          amountOf2=amountOf2+Math.floor(Math.log(j)/ Math.log(2));
         }
         if (j%5==0&&j%2!=0){
-          amountOf5=amountOf5+j/5;
+          amountOf5=amountOf5+Math.floor(Math.log(j)/ Math.log(5));
         }
         if (j%10==0){
           numOfZeros++;
@@ -56,3 +56,6 @@ module.exports =
   return numOfZeros;
 }
 //console.log(zeros('1!*2!*3!*4!*5!*6!*7!*8!*9!*10!'))
+
+
+//console.log( Math.log(125, 1/5))
